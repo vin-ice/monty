@@ -9,7 +9,6 @@ void interpret(FILE *file)
 	void (*f)(stack_t **stack, unsigned int line_number);
     char *opcode = NULL;
 
-    printf("===core.c->interpreter====\n");
     /**
     head = malloc(sizeof (stack_t));
     if (head == NULL)

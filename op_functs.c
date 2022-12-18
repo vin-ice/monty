@@ -9,7 +9,6 @@ void _push(stack_t **stack, unsigned int line_number)
     char *num;
     stack_t *node = NULL, *tm = *stack;
 
-    printf("\n===op_funcs.c->_push====\n");
     num = strtok(NULL, " \t\n");
     if (num == NULL || (_isdigit(num) != 0 && num[0] != '-'))
     {    
@@ -53,7 +52,6 @@ void _pall(stack_t **stack, unsigned int line_number)
 {
     stack_t *node = *stack;
 
-    printf("\n===op_funcs.c->_pall====\n");
     if (!node)
         return;
     while (node)
@@ -72,7 +70,6 @@ void _pop(stack_t **stack, unsigned int line_number)
 {
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_pop====\n");
     if (stack == NULL || *stack == NULL)
     {    
         free_all();
@@ -93,7 +90,6 @@ void _swap(stack_t **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_swap====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;
@@ -120,7 +116,6 @@ void _add(stack_t **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_add====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;

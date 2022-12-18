@@ -6,7 +6,6 @@
 */
 void _pchar(stack_t  **stack, unsigned int line_number)
 {
-    printf("\n===op_funcs3.c->_pchar====\n");
     if (stack == NULL || *stack == NULL)
     {   
         free_all();
@@ -29,7 +28,6 @@ void _pstr(stack_t **stack, unsigned int line_number)
     stack_t *temp = NULL;
     (void)line_number;
 
-    printf("\n===op_funcs3.c->_pstr====\n");
     for (temp = *stack; temp && temp->n != 0 && _isascii(temp->n); temp = temp->next)
         printf("%c", temp->n);
     printf("\n");
@@ -45,7 +43,6 @@ void _rotl(stack_t **stack, unsigned int line_number)
     stack_t *temp2 = NULL;
     (void)line_number;
 
-    printf("\n===op_funcs3.c->_rotl====\n");
     if (*stack == NULL)
         return;
     if ((*stack)->next == NULL)

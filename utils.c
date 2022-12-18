@@ -4,7 +4,6 @@
 */
 void set_globals(char *path)
 {
-    printf("===utils.c->set_globals===\n");
     globals.head = NULL;
     globals.line = 1;
     globals.file = get_file(path);
@@ -21,7 +20,6 @@ FILE *get_file(char *path)
     struct stat sb;
     FILE *file;
 
-    printf("\n===utils.c->get_file===\n");
     if (stat(path, &sb) == -1)
     {    
         free_all();
@@ -40,7 +38,6 @@ FILE *get_file(char *path)
 */
 void free_all(void)
 {
-    printf("\n===utils.c->free_all===\n");
     if (globals.head != NULL)
     {    while (globals.head->next != NULL)
         {
@@ -100,6 +97,5 @@ int is_int(char *str)
 				return (0);
 		}
 	}
-
 	return (1);
 }

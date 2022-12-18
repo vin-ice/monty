@@ -6,7 +6,6 @@
 */
 void _nop(stack_t **stack, unsigned int line_number)
 {
-     printf("\n===op_funcs2.c->_nop====\n");
     (void)stack;
     (void)line_number;
 }
@@ -20,7 +19,6 @@ void _sub(stack_t  **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_sub====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;
@@ -44,7 +42,6 @@ void _div(stack_t  **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_sub====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;
@@ -75,7 +72,6 @@ void _mul(stack_t  **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_sub====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;
@@ -99,7 +95,6 @@ void _mod(stack_t  **stack, unsigned int line_number)
     int count = 0;
     stack_t *temp = NULL;
 
-    printf("\n===op_funcs.c->_sub====\n");
     temp = *stack;
     for (; temp != NULL; temp = temp->next, count++)
         ;
