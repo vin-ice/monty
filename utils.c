@@ -1,54 +1,54 @@
 #include "monty.h"
 /**
  * set_globals - initializes global structure
-*/
+ */
 void set_globals(char *path)
 {
-    globals.head = NULL;
-    globals.line = 1;
-    globals.file = get_file(path);
-    globals.STRUCT_MODE = 0;
+	globals.head = NULL;
+	globals.line = 1;
+	globals.file = get_file(path);
+	globals.STRUCT_MODE = 0;
 }
 /**
  * get_file - returns descriptor to file at path
  * @path: path to file
  * Return: pointer to file
  *  exits otherwise
-*/
+ */
 FILE *get_file(char *path)
 {
-    struct stat sb;
-    FILE *file;
+	struct stat sb;
+	FILE *file;
 
-    if (stat(path, &sb) == -1)
-    {    
-        free_all();
-        fatal("Error: Can\'t open file %s\n", path);
-    }
-    file = fopen(path, "r");
-    if (file == NULL)
-    {    
-        free_all();
-        fatal("Error: Can\'t open file %s\n", path);
-    }
-    return (file);
+	if (stat(path, &sb) == -1)
+	{
+		free_all();
+		fatal("Error: Can\'t open file %s\n", path);
+	}
+	file = fopen(path, "r");
+	if (file == NULL)
+	{
+		free_all();
+		fatal("Error: Can\'t open file %s\n", path);
+	}
+	return (file);
 }
 /**
  * free_all - frees all dynamic memory in globals_t struct
-*/
+ */
 void free_all(void)
 {
-    if (globals.head != NULL)
-    {    while (globals.head->next != NULL)
-        {
-            globals.head = globals.head->next;
-            free(globals.head->prev);
-        }
-        free(globals.head);
-    }
-    if (globals.file != NULL)
-        if (fclose(globals.file) != 0)
-            perror("close");
+	if (globals.head != NULL)
+	{    while (globals.head->next != NULL)
+		{
+			globals.head = globals.head->next;
+			free(globals.head->prev);
+		}
+		free(globals.head);
+	}
+	if (globals.file != NULL)
+		if (fclose(globals.file) != 0)
+			perror("close");
 }
 /**
  * _isdigit - Clean all program mallocs
@@ -69,12 +69,12 @@ int _isdigit(char *string)
 /**
  * _isascii - checks if int fits in the ascii table
  * @i: integer
-*/
+ */
 boolean _isascii(int i)
 {
-    if (i < 0 || i > 128)
-        return (False);
-    return (True);
+	if (i < 0 || i > 128)
+		return (False);
+	return (True);
 }
 /**
  * is_valid_int - checks if a given string is a valid integer
@@ -99,3 +99,4 @@ int is_int(char *str)
 	}
 	return (1);
 }
+

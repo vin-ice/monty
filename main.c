@@ -7,16 +7,17 @@ globals_t globals;
  * @argc: arguments count
  * @argv: arguments vector
  * Return: 0
-*/
+ */
 int main(int argc, char **argv)
 {
 
-    if (argc != 2)/**file not passed or multiple args*/
-        err_exit("USAGE: monty file");
-    
-    set_globals(argv[1]);
+	if (argc != 2)/**file not passed or multiple args*/
+		err_exit("USAGE: monty file");
 
-    interpret(globals.file);
-    free_all();
-    return (0);
+	set_globals(argv[1]);
+
+	interpret(globals.file);
+	free_all();
+	return (0);
 }
+

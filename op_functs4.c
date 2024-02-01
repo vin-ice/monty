@@ -3,10 +3,10 @@
  * _rotr - rotates the stack to the bottom
  * @stack: pointer to stack
  * @line_number: line number
-*/
+ */
 void _rotr(stack_t  **stack, unsigned int line_number)
 {
-    stack_t *temp = NULL;
+	stack_t *temp = NULL;
 	(void)line_number;
 
 	if (*stack == NULL)
@@ -55,3 +55,4 @@ void _stack(stack_t **stack, unsigned int line_number)
 
 	globals.STRUCT_MODE = 0;
 }
+
